@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Login.css">
+    <title>Ahmad.Login</title>
+</head>
+<body>
+    <div class="heading-top">
+        <h3>Welcome to Database Project</h3>
+    </div>
+
+    <div class="wrapper" id="home">
+        <div class="form-wrapper signin">
+            <form action="">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" required>
+                    <label for="">Remember</label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="#" class="signupBtn-link" onclick="toggleForm('signup')">Signup</a></p>
+                    </div>
+                    <div class="codelogo">
+                        <p >Code by Ahmad</p>
+                    </div>
+                    
+            </form>
+        </div>
+        
+        <div class="form-wrapper signup" style="display: none;">
+            <form action="">
+                <h2>Signup</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="signup-link">
+                    <p>Already have an account? <a href="#" class="signinBtn-link" onclick="toggleForm('signin')">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    
+    <script src="script.js"></script>
+    <script>
+        function toggleForm(formType) {
+            const signinForm = document.querySelector('.form-wrapper.signin');
+            const signupForm = document.querySelector('.form-wrapper.signup');
+
+            if (formType === 'signup') {
+                signinForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            } else if (formType === 'signin') {
+                signinForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            }
+        }
+
+        function goBack() {
+            const homePage = document.getElementById('home');
+            const signinForm = document.querySelector('.form-wrapper.signin');
+            const signupForm = document.querySelector('.form-wrapper.signup');
+            const backBtn = document.getElementById('backBtn');
+
+            homePage.style.display = 'block';
+            signinForm.style.display = 'none';
+            signupForm.style.display = 'none';
+            backBtn.style.display = 'none';
+        }
+
+
+
+    </script>
+</body>
+</html>
